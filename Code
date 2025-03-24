@@ -1,10 +1,17 @@
 
+red = "Red5"
+orange = "Orange4"
+yellow = "Yellow3"
+green = "Green2"
+blue = "Blue1"
 
 def stackPush(stack):
 
-    for i in range(5):
-        
-        stack.append(i)
+    stack.append(red)
+    stack.append(orange)
+    stack.append(yellow)
+    stack.append(green)
+    stack.append(blue)
         
     return stack
     
@@ -21,34 +28,19 @@ def stackPop(stack):
         
     return stack
     
-def stackPeek(stack):
+    
+def removeTop(stack):
     
     element = stack[-1]
     print("Element on stack top :", element)
+    stack.pop()
     
-def stackSearch(stack, element):
     
-    pos = -1
-    co = 0
-    
-    while(len(stack) > 0):
-        
-        co+=1
-        
-        if stack[-1] == element:
-            
-            pos = co
-            break
-        
-        stack.pop()
-        
-    if pos == -1:
-        
-        print("Element not found")
-        
-    else:
-        
-        print("Element is found at position", pos)
+
+stack = []
+stackPush(stack)
+stackPop(stack)
+stackPush(stack)
 
 
 
