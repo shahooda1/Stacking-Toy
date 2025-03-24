@@ -1,0 +1,55 @@
+
+
+def stackPush(stack):
+
+    for i in range(5):
+        
+        stack.append(i)
+        
+    return stack
+    
+
+def stackPop(stack):
+    
+    print("Pop :")
+    
+    for i in range(5):
+        
+        y = stack[-1]
+        stack.pop()
+        print(y)
+        
+    return stack
+    
+def stackPeek(stack):
+    
+    element = stack[-1]
+    print("Element on stack top :", element)
+    
+def stackSearch(stack, element):
+    
+    pos = -1
+    co = 0
+    
+    while(len(stack) > 0):
+        
+        co+=1
+        
+        if stack[-1] == element:
+            
+            pos = co
+            break
+        
+        stack.pop()
+        
+    if pos == -1:
+        
+        print("Element not found")
+        
+    else:
+        
+        print("Element is found at position", pos)
+
+
+
+
