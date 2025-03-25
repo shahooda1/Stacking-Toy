@@ -76,31 +76,53 @@ def placeRing(stack, hand):
             print("\n")
             
             
-        userInput = input("\nWhich ring would you like to place? Input a number from 1 to 5, which corresponds to the rings in your hand
+        ringNum = input("\nWhich ring would you like to place? Input a number from 1 to 5, which corresponds to the rings in your hand")
         
         while True:
             
-            if userInput.isdigit() == True and int(userInput) > 0 and int(userInput) < 6:
+            if ringNum.isdigit() == True and int(ringNum) > 0 and int(ringNum) <= len(hand):
 
                 break
-            
+
             else:
+        
+                ringNum = input("\nPlease provide a valid input")
                 
-                print("\nPlease provide a valid input")
-                
-                userInput = input()
+        ringNum = int(ringNum) - 1
+        
+        print("\n")
+        
+        
             
                 
+def choice():
     
+    choice = input("\nWould you like to remove a ring or place one? Enter 'R' for remove or 'P' for place.")
     
+    while True:
+        
+        if choice.upper() == 'R':
+            
+        elif choice.upper() == 'P':
+            
+            
+            
+        else:
+            
+            choice = input("\nPlease provide a valid input")
+
+
 
 
 stack = []
 hand = []
 
+
 fillStack(stack)
-placeRing(stack, hand)
-removeTop(stack, hand)
-placeRing(stack, hand)
+
+
+while True:
+    
+    
 
 
