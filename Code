@@ -61,9 +61,7 @@ def removeTop(stack, hand):
 def placeRing(stack, hand):
     
     
-    if len(hand) == 0:
-        
-        print("\nYour hand is empty, remove a ring from the stack to put it in your hand.")
+    
         
     else:
         
@@ -103,9 +101,23 @@ def choice():
         
         if choice.upper() == 'R':
             
+            if len(stack) == 0:
+                
+                print("\nThe stack is currently empty. You have to place a ring.")
+                
+            else:
+                
+                removeTop(stack,hand)
+            
         elif choice.upper() == 'P':
             
+            if len(hand) == 0:
+        
+                print("\nYour hand is empty, remove a ring from the stack to put it in your hand.")
             
+            else:
+                
+                placeRing(stack, hand)
             
         else:
             
