@@ -5,7 +5,7 @@ yellow = "Yellow3"
 green = "Green2"
 blue = "Blue1"
 
-def stackPush(stack):
+def fillStack(stack):
 
     stack.append(red)
     stack.append(orange)
@@ -16,32 +16,91 @@ def stackPush(stack):
     return stack
     
 
-def stackPop(stack):
+def printStack(stack):
     
-    print("Pop :")
+    print()
     
-    for i in range(5):
+    count = len(stack) - 1
+    
+    for i in range(len(stack)):
         
-        y = stack[-1]
-        stack.pop()
-        print(y)
+        print(stack[count-i])
+    
+    
+def removeTop(stack, hand):
+    
+    print()
+    
+    topRing = stack[-1]
+    
+    if topRing == red:
         
-    return stack
+        print("Removing the red ring")
+        
+    elif topRing == orange:
+        
+        print("Removing the orange ring")
+        
+    elif topRing == yellow:
+        
+        print("Removing the yellow ring")
+        
+    elif topRing == green:
+        
+        print("Removing the green ring")
+        
+    elif topRing == blue:
+        
+        print("Removing the blue ring")
     
-    
-def removeTop(stack):
-    
-    element = stack[-1]
-    print("Element on stack top :", element)
+    hand.append(topRing)
     stack.pop()
     
     
+    
+def placeRing(stack, hand):
+    
+    
+    if len(hand) == 0:
+        
+        print("\nYour hand is empty, remove a ring from the stack to put it in your hand.")
+        
+    else:
+        
+        
+        for j in range(len(hand)):
+            
+            print("\n")
+            print("Your hand:\n")
+            print(hand[j], end = " ")
+            print("\n")
+            
+            
+        userInput = input("\nWhich ring would you like to place? Input a number from 1 to 5, which corresponds to the rings in your hand
+        
+        while True:
+            
+            if userInput.isdigit() == True and int(userInput) > 0 and int(userInput) < 6:
+
+                break
+            
+            else:
+                
+                print("\nPlease provide a valid input")
+                
+                userInput = input()
+            
+                
+    
+    
+
 
 stack = []
-stackPush(stack)
-stackPop(stack)
-stackPush(stack)
+hand = []
 
-
+fillStack(stack)
+placeRing(stack, hand)
+removeTop(stack, hand)
+placeRing(stack, hand)
 
 
