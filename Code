@@ -12,9 +12,10 @@ def fillStack(stack):
     stack.append(yellow)
     stack.append(green)
     stack.append(blue)
-        
+
     return stack
     
+
 
 def printStack(stack):
     
@@ -26,6 +27,7 @@ def printStack(stack):
         
         print(stack[count-i])
     
+
     
 def removeTop(stack, hand):
     
@@ -56,48 +58,80 @@ def removeTop(stack, hand):
     hand.append(topRing)
     stack.pop()
     
+    printStack(stack)
+
     
-    
+
 def placeRing(stack, hand):
     
     
+    print("\nThe rings in your hand are:")
+    print()
+
+    for i in range(len(hand)):
+        
+        print(hand[i], end=" ")
     
+    print("\n")
+    
+    
+    while True:
         
-    else:
+        pChoice = input("\nSelect a number from 1-5 to place the corresponding ring from your hand onto the stack.")
         
-        
-        for j in range(len(hand)):
+        if pChoice.isdigit() == True:
             
-            print("\n")
-            print("Your hand:\n")
-            print(hand[j], end = " ")
-            print("\n")
-            
-            
-        ringNum = input("\nWhich ring would you like to place? Input a number from 1 to 5, which corresponds to the rings in your hand")
-        
-        while True:
-            
-            if ringNum.isdigit() == True and int(ringNum) > 0 and int(ringNum) <= len(hand):
+            if int(pChoice) > len(hand) or int(pChoice) < 1:
+                
+                print("\nPlease provide a valid input.")
+
+            else:
 
                 break
 
-            else:
+        else:
+    
+            print("\nPlease provide a valid input.")
+            
+            
+    pChoice = int(pChoice) - 1
+    
         
-                ringNum = input("\nPlease provide a valid input")
-                
-        ringNum = int(ringNum) - 1
+    if hand[pChoice] == red:
+            
+        stack.append(red)
+            
+    elif hand[pChoice] == orange:
+            
+        stack.append(orange)
+            
+    elif hand[pChoice] == yellow:
+            
+        stack.append(yellow)
+            
+    elif hand[pChoice] == green:
+            
+        stack.append(green)
+            
+    elif hand[pChoice] == blue:
+
+        stack.append(blue)
         
-        print("\n")
+    
+    hand.pop(pChoice)
         
-        
+    printStack(stack)
+    
+    
             
                 
 def choice():
     
-    choice = input("\nWould you like to remove a ring or place one? Enter 'R' for remove or 'P' for place.")
+    
     
     while True:
+        
+        choice = input("\nWould you like to remove a ring or place one? Enter 'R' for remove or 'P' for place.")
         
         if choice.upper() == 'R':
             
@@ -118,7 +152,7 @@ def choice():
             else:
                 
                 placeRing(stack, hand)
-            
+
         else:
             
             choice = input("\nPlease provide a valid input")
@@ -127,14 +161,20 @@ def choice():
 
 
 stack = []
+
 hand = []
 
 
 fillStack(stack)
 
-
 while True:
     
+    printStack(stack)
     
+    choice()
 
 
+
+
+    
+    
