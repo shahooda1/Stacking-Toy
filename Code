@@ -1,10 +1,42 @@
+RED = "\033[91m"
+WHITE = "\033[97m"
+YELLOW = "\033[93m"
+GREEN = "\033[92m"
+BLUE = "\033[94m"
+
+RESET = "\033[0m"
+
 
 # Variables for the rings
-red = "Red5"
-orange = "Orange4"
-yellow = "Yellow3"
-green = "Green2"
-blue = "Blue1"
+red = f""" {RED}
+         ________________________
+        |          Red           |  
+         ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ 
+         {RESET}"""
+
+orange = f""" {WHITE}
+          ______________________
+         |        White         |  
+          ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+         {RESET}"""
+
+yellow = f""" {YELLOW}
+           ___________________
+          |       Yellow      |  
+           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+         {RESET}"""
+
+green = f""" {GREEN}
+            _________________
+           |      Green      |  
+            ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+         {RESET}"""
+
+blue = f""" {BLUE}
+             ______________
+            |     Blue     |  
+             ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+         {RESET}"""
 
 #Function to fill the stack up
 def fillStack(stack):
@@ -184,3 +216,4 @@ while True:
 
     
     
+
