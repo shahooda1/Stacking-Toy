@@ -1,3 +1,5 @@
+# Defining the actual colors for the rings
+
 RED = "\033[91m"
 WHITE = "\033[97m"
 YELLOW = "\033[93m"
